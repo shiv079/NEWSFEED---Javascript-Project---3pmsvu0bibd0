@@ -10,7 +10,7 @@ function dbx(a) {
   var rem =document.getElementsByClassName('remove');
   for(var p=0;p<rem.length;p++){
     rem[p].remove();
-  }
+  };
 
 
 
