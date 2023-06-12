@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="stylesheet" href="./js.css">
+    <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Mynews Feed</title>
+    <title>🌄MYNEWSFEED</title>
 </head>
 
 <body>
@@ -23,13 +23,13 @@
                     style="display: flex; justify-content: space-between; align-items: center; overflow: hidden; height: 45px; padding-left: 12px; padding-right: 10px;">
                     <div class="notranslate"
                         style="display: flex; align-items: center; line-height: 1.2; font-size: 14px; height: 100%; flex-grow: 0; margin-right: 8px; min-width: 0px;">
-                        <div class="notion-focusable" role="button" tabindex="0"
+                        <div class="notion-focusable hurray" role="button" tabindex="0"
                             style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: inline-flex; align-items: center; flex-shrink: 1; white-space: nowrap; height: 24px; border-radius: 4px; font-size: 14px; line-height: 1.2; min-width: 0px; padding-left: 6px; padding-right: 6px; color: rgb(55, 53, 47);">
                             <div class="notion-record-icon notranslate"
                                 style="display: flex; align-items: center; justify-content: center; height: 20px; width: 20px; border-radius: 0.25em; flex-shrink: 0; margin-right: 6px;">
                                 <div
                                     style="display: flex; align-items: center; justify-content: center; height: 20px; width: 20px;">
-                                    <div
+                                    <div 
                                         style="height: 14px; width: 14px; font-size: 14px; line-height: 1; margin-left: 0px; color: black;">
                                         <img class="notion-emoji" alt="🌄" aria-label="🌄"
                                             src="https://notion-emojis.s3-us-west-2.amazonaws.com/prod/svg-twitter/1f304.svg"
@@ -67,7 +67,7 @@
             <h3>MY NEWSFEED</h3>
         </div>
         <div id="div-container">
-            <button id="btn1">LOAD SAVED NEWS</button>
+            <a href="#yes"><button id="btn1">LOAD SAVED NEWS</button></a>
             &nbsp;
             &nbsp;
             &nbsp;
@@ -84,7 +84,7 @@
             &nbsp;
             &nbsp;
             &nbsp;
-            <button id="btn2">LOAD NEW NEWS</button>
+            <a href="#yes2"><button id="btn2">LOAD NEW NEWS</button></a>
         </div>
     </div>
     <div class="content">
@@ -94,23 +94,20 @@
         <H2>STAY UPDATED</H2>
     </div>
     <div class="second-div">
-        <div class="saved">
+        <div class="saved" id="yes">
             <button class="btnx">MY NEWSFEED</button>
-            <button class="btnx1">SAVED NEWS</button>
+            <button class="btnx1" onclick="storedNews()">SAVED NEWS</button>
         </div>
-        <div class="textbox">
-            <p name="news" id="" cols="30" class="textarea">
-            </p>
-            <i class="fa-solid fa-heart myicon" style="color: red;"></i>
-            <p name="news" id="" cols="30" class="textarea"></p>
-            <i class="fa-solid fa-heart myicon" style="color: red;"></i>
+        <div class="textbox stored" >
+           
+            
         </div>
     </div>
     <div class="third-div">
         <div class="categories">
-            <div class="categories-2nd">
-                <button class="btnx0">MY NEWSFEED</button>
-                <button class="btnx1">NEW NEWS</button>
+            <div class="categories-2nd" id="yes2">
+                <button class="btnx0" onclick="dbx(this)">MY NEWSFEED</button>
+                <button class="btnx1" onclick="dbx(this)">NEW NEWS</button>
                 <br>
                 <button class="btnx2">SELECT CATEGORY</button>
                 <br>
@@ -127,15 +124,16 @@
             </div>
         </div>
         <div class="textbox parent">
-            <div name="news" id="" cols="30" class="textarea remove" >
-                <span>By :</span>
-                <span style="float: right;">Category :</span>
+            <div cols="30" class="textarea remove" >
+                <span></span>
+                <span class="right">Category :</span>
                 <p></p>
+                <i class="fa-solid fa-heart myicon" onclick="saved(this)"></i>
             </div>
-            <i class="fa-solid fa-heart myicon" style="color: red;"></i>
+            
         </div>
     </div>
-    <script src="./js.js"></script>
+    <script src="./script.js"></script>
 </body>
 
 </html>
