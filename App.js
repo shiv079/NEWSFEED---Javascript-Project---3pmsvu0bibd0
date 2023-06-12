@@ -1,26 +1,23 @@
 console.log("hello world");
-
-
-
-
-
-
+let count = 1;
 function dbx(a) {
-
-  var rem =document.getElementsByClassName('remove');
-  for(var p=0;p<rem.length;p++){
+  var rem = document.getElementsByClassName('remove');
+  for (var p = 0; p < rem.length; p++) {
+    localStorage.setItem(count,rem[p]);
+    console.log(rem[p]);
     rem[p].remove();
-  };
+  }
 
 
 
 
-   
 
-  
+
+
+
   let pro = fetch(`https://inshorts.deta.dev/news?category=${a.value}`).then((reponse) => {
-    console.log(reponse.status)
-    console.log(reponse.ok)
+    // console.log(reponse.status)
+    // console.log(reponse.ok)
     return reponse.json()
   }).then((value) => {
 
@@ -34,41 +31,38 @@ function dbx(a) {
       filling(auth, content);
 
     }
-  })
+  })   
 
-   var parent = document.querySelector('.parent');
+  var parent = document.querySelector('.parent');
   function filling(auth, content) {
 
-    console.log(auth);
-    console.log(content);
+    // console.log(auth);
+    // console.log(content);
     var span = document.createElement('span');
     var span1 = document.createElement('span');
     var p = document.createElement('p');
     var div = document.createElement('div');
-    // var l = document.createElement('i');
-    div.setAttribute('class','remove');
+    var l = document.createElement('i');
+    l.setAttribute('class','fa-solid fa-heart myicon');
+    l.setAttribute('onclick','saved(this)');
+    div.setAttribute('class', 'textarea remove');
+    span1.setAttribute('class', 'right');
     div.appendChild(span);
     div.appendChild(span1);
     div.appendChild(p);
+    div.appendChild(l);
     parent.appendChild(div);
-  // parent.appendChild(l);
-
-    span.innerHTML=auth;
-    span1.innerHTML="hello";
-    p.innerHTML=content;
-
-
+    span.innerHTML = "Author :" + auth;
+    span1.innerHTML = "Category :" + a.innerHTML;
+    p.innerHTML = content;
   }
-
-
-
-
-
-
-
-
-
-
+}
+var w =0;
+function saved(a){
+  var data = document.querySelector('.stored');
+  var x = a.parentNode;
+  data.appendChild(x);
+  console.log(x);
 }
 
 
