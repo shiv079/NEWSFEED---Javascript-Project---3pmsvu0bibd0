@@ -146,6 +146,7 @@
 }
 
 .textarea{
+    position: relative;
     width: 96%;
     height: auto;
     margin-top: 10px;
@@ -182,3 +183,27 @@
     height: 50px;
     margin-top: 25px;
 }
+.right{
+    float: right;
+}
+i{
+    height: 5px;
+    width: 20px;
+    position:absolute;
+    right: 5px;
+    bottom: 5px;
+    color: black;
+    
+}
+.second-div .stored .myicon{
+    color: red;
+}
+.oneline .btnx1:hover{
+ background-color: lightblue;
+}
+.oneline .btnx3:hover{
+    background-color: lightblue;
+   }
+   .hurray:hover{
+    background-color: lightgrey;
+   }
